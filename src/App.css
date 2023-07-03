@@ -1,38 +1,221 @@
-.App {
+/* Όλη η ιστοσελίδα χρησιμοποεί display:flex */
+
+/* Παρακάτω πάνω από το καθένα θα γράψω σε τι element κάνει styling*/
+
+/* Σε όλη την σελίδα */
+.app{
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Τίτλος */
+h1{
+  font-size: 45px;
   text-align: center;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Υπότιτλοι */
+h3{
+  font-size: 24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Φωτογραφίες */
+img{
+  width: 300px;
+  height: 300px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Διάταξη των cards στην σελίδα */
+.cards{
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+/* Style του κάθε card */
+.itemCards{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  background: #3405a3;
+  border-radius: 15px;
+  box-shadow: 1px 5px 60px 0px #100a886b;
+}
+
+/* O τίτλος του κάθε card */
+.itemCards>h2{
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* Το περιεχόμενο του κάθε card */
+.cardContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+/* Το p element του κάθε card */
+.cardContainer p {
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+/* Το button του κάθε card */
+.cardContainer button {
+  padding: 10px 30px;
+  margin: auto;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  background: #6b64f3;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Το button του κάθε card όταν γίνεται hover*/
+.cardContainer button:hover {
+  transform: scale(1.1);
+}
+
+/* Τα κεντρικά messages */
+#messages{
+  text-align: center;
+  width: 50%;
+  margin: auto;
+}
+
+#messages p{
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+/* Τα κουμπιά του beneficiary */
+.buttonsFlex{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+/* Διάταξη των πληροφοριών κάτω στην σελίδα */
+.infoContainer{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Το container tou user */
+.userContainer{
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+}
+
+/* Το κουμπί του user */
+.userContainer button{
+  padding: 10px 30px;
+  margin: 0 auto 0 0;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  background: #FA6400;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Το κουμπί του user hover*/
+.userContainer button:hover{
+  transform: scale(1.1);
+}
+
+/* Το container tou balance */
+.balanceContainer{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Το container tou beneficiary */
+.beneContainer{
+  display: flex;
+  flex-direction: column;
+  padding-right: 50px;
+}
+
+/* Τα κουμπιά του benediciary*/
+.beneContainer button{
+  padding: 10px 30px;
+  margin: auto 0 auto 0;
+  border-radius: 8px;
+  border: none;
+  background: #2EA44F;
   color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+/* Τα κουμπιά του benediciary hover */
+.beneContainer button:hover{
+  transform: scale(1.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.beneContainer input{
+  margin-left: 5px;
+  padding: 2px;
 }
+
+.userContainer h3{
+  margin-bottom: -5px;
+}
+
+.beneContainer h3{
+  margin-bottom: -5px;
+}
+
+.userContainer p{
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.beneContainer p{
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#winnerMessage{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Τα κουμπιά όταν είναι απενεργοποιημένα */
+button:disabled{
+  background-color: grey;
+  cursor: auto;
+  transition: none;
+}
+
+button:disabled:hover{
+  transform: none;
+}
+
